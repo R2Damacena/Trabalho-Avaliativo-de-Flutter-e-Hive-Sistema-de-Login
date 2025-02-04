@@ -26,15 +26,6 @@ class MyApp extends StatelessWidget {
               username: ModalRoute.of(context)!.settings.arguments as String,
             ),
       },
-      onGenerateRoute: (settings) {
-        if (settings.name == '/login') {
-          return MaterialPageRoute(
-            builder: (context) => LoginScreen(),
-            maintainState: false, // Destrói a tela anterior
-          );
-        }
-        return null;
-      },
     );
   }
 }
