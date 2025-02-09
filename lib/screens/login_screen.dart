@@ -36,27 +36,53 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      //backgroundColor: Color(8290047),
+      //backgroundColor: Color.fromARGB(255, 168, 189, 255),
+      appBar: AppBar(
+        backgroundColor: Color(0xff0e5384),
+        foregroundColor: Colors.white,
+        centerTitle: true,
+        title: const Text('Login')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
+              Image.asset(
+                'images/Logo.png',
+                height: 200,
+              ),
+              const SizedBox(height: 8),
               TextFormField(
                 controller: _usernameController,
+                cursorColor: Color(0xff0e5384),
                 decoration: const InputDecoration(
                   labelText: 'Usuário',
                   prefixIcon: Icon(Icons.person),
+                  //labelStyle: TextStyle(color: Color(0xff0e5384)),
+                  prefixIconColor: Color(0xff0e5384),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0e5384), width: 2.0),),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xffb33028), width: 2.0),),
                 ),
                 validator: (value) =>
                     value!.isEmpty ? 'Campo obrigatório' : null,
               ),
+              const SizedBox(height: 8),
               TextFormField(
                 controller: _passwordController,
+                cursorColor: Color(0xff0e5384),
                 decoration: const InputDecoration(
                   labelText: 'Senha',
                   prefixIcon: Icon(Icons.lock),
+                  //labelStyle: TextStyle(color: Color(0xff0e5384)),
+                  prefixIconColor: Color(0xff0e5384),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0e5384), width: 2.0),),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xffb33028), width: 2.0),),
                 ),
                 obscureText: true,
                 validator: (value) =>
@@ -66,10 +92,18 @@ class _LoginScreenState extends State<LoginScreen> {
               ElevatedButton(
                 onPressed: _login,
                 child: const Text('Entrar'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff0e5384),
+                  foregroundColor: Colors.white,
+                ),
               ),
+              const SizedBox(height: 10),
               TextButton(
                 onPressed: () => Navigator.pushNamed(context, '/register'),
                 child: const Text('Criar nova conta'),
+                style: TextButton.styleFrom(
+                  foregroundColor: Color(0xff0e5384),
+                ),
               ),
             ],
           ),

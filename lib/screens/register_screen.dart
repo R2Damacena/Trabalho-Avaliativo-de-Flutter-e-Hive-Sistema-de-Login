@@ -37,27 +37,49 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Registro')),
+      appBar: AppBar(
+        backgroundColor: Color(0xff0e5384),
+        foregroundColor: Colors.white,
+        centerTitle: true,
+        title: const Text('Registro')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
+              Image.asset(
+                'images/Logo.png',
+                height: 200,
+              ),
+              const SizedBox(height: 8),
               TextFormField(
                 controller: _usernameController,
                 decoration: const InputDecoration(
                   labelText: 'Usuário',
                   prefixIcon: Icon(Icons.person),
+                  //labelStyle: TextStyle(color: Color(0xff0e5384)),
+                  prefixIconColor: Color(0xff0e5384),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0e5384), width: 2.0),),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xffb33028), width: 2.0),),
                 ),
                 validator: (value) =>
                     value!.isEmpty ? 'Campo obrigatório' : null,
               ),
+              const SizedBox(height: 8),
               TextFormField(
                 controller: _passwordController,
                 decoration: const InputDecoration(
                   labelText: 'Senha',
                   prefixIcon: Icon(Icons.lock),
+                  //labelStyle: TextStyle(color: Color(0xff0e5384)),
+                  prefixIconColor: Color(0xff0e5384),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0e5384), width: 2.0),),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xffb33028), width: 2.0),),
                 ),
                 obscureText: true,
                 validator: (value) =>
@@ -67,10 +89,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ElevatedButton(
                 onPressed: _register,
                 child: const Text('Registrar'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff0e5384),
+                  foregroundColor: Colors.white,
+                ),
               ),
+              const SizedBox(height: 10),
               TextButton(
                 onPressed: () => Navigator.pushNamed(context, '/login'),
                 child: const Text('Já tem conta? Faça Login'),
+                style: TextButton.styleFrom(
+                  foregroundColor: Color(0xff0e5384),
+                ),
               ),
             ],
           ),
