@@ -58,7 +58,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 decoration: const InputDecoration(
                   labelText: 'Usuário',
                   prefixIcon: Icon(Icons.person),
-                  //labelStyle: TextStyle(color: Color(0xff0e5384)),
                   prefixIconColor: Color(0xff0e5384),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Color(0xff0e5384), width: 2.0),),
@@ -74,7 +73,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 decoration: const InputDecoration(
                   labelText: 'Senha',
                   prefixIcon: Icon(Icons.lock),
-                  //labelStyle: TextStyle(color: Color(0xff0e5384)),
                   prefixIconColor: Color(0xff0e5384),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Color(0xff0e5384), width: 2.0),),
